@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :lists, dependent: :destroy
   has_one_attached :photo
-  validates :email, uniquness: true
+  validates :email, uniqueness: true
   validates :first_name, uniqueness: {scope: :last_name}
   validates :encrypted_password, :email, presence: true
 
